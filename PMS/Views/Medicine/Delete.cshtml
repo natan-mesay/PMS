@@ -1,0 +1,99 @@
+﻿@model Medicine
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<form action="/Medicine/Delete/@Model.MedicineId" method="post">
+<table class="table">
+    <table>
+            <tr>
+                <td>
+                    <label asp-for="MedicineDescription"> Medicine Description</label>
+                </td>
+                <td>
+                    <input type="hidden" name="MedicineDescription" value="@Model.MedicineDescription" />
+                    @Model.MedicineDescription
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="MedicineName">Medicine Name</label>
+                </td>
+                <td>
+                    <input type="hidden" name="MedicineName" value="@Model.MedicineName" />
+                    @Model.MedicineName
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Amount"></label>
+                </td>
+                <td>
+                    <input type="hidden" name="Amount" value="@Model.Amount" />
+                    @Model.Amount
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="MedicineMass">Medicine Mass</label>
+                </td>
+                <td>
+                    <input type="hidden" name="MedicineMass" value="@Model.MedicineMass" />
+                    @Model.MedicineMass
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="ProductDate">Product Date</label>
+                </td>
+                <td>
+                    <input type="hidden" name="ProductDate" value="@Model.ProductDate" />
+                    @Model.ProductDate
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="ExpireDate">Expire Date</label>
+                </td>
+                <td>
+                    <input type="hidden" name="ExpireDate" value="@Model.ExpireDate" />
+                    @Model.ExpireDate
+                </td>
+            </tr>
+                <tr>
+                    <td>
+                    <label asp-for="MadeIn">Made In</label>
+                    </td>
+                    <td>
+                    <input type="hidden" name="MadeIn" value="@Model.MadeIn" />
+                    @Model.MadeIn
+                    </td>
+                </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="Price"></label>
+                </td>
+                <td>
+                    <input type="hidden" name="Price" value="@Model.Price" />
+                    @Model.Price
+                </td>
+            </tr>
+
+        <tr>
+            <td>
+                    <label asp-for="Type"></label>
+            </td>
+            <td>
+                    <input type="hidden" name="Type" value="@Model.Type" />
+                    @Model.Type
+            </td>
+        </tr>
+            
+    </table>
+
+</form>
+<button type="submit" class="btn btn-danger">Delete</button>
+
+

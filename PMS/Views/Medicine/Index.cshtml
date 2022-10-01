@@ -1,0 +1,138 @@
+﻿@model IEnumerable<PMS.Models.Medicine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table {
+        width: 50%;
+    }
+
+    // Fixing width of first
+    // column of each row
+    td:nth-child(1) {
+        width: 40%;
+    }
+
+    // Fixing width of second
+    // column of each row
+    td:nth-child(2) {
+        width: 60%;
+    }
+
+    tr:nth-child(even) {
+        background-color: rgba(150, 212, 212, 0.4);
+    }
+
+</style>
+<h1>Index</h1>
+
+
+<form class="d-flex">
+    <input class="form-control me-sm-2" type="text" placeholder="Search" name="search" value="@ViewBag.search">
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div style="overflow-x: 10%;">
+    <table class="table">
+
+        <col style="width: 40%;" />
+
+        <!-- Assigning width of second
+         column of each row as 60% -->
+        <col style="width: 60%;" />
+        <thead>
+            <tr>
+                <th>
+                    MedicineId
+                </th>
+                <th>
+                    MedicineName
+                </th>
+                <th class="dis">
+                    MedicineDescription
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    MedicineMass
+                </th>
+                <th>
+                    ProductDate
+                </th>
+                <th>
+                    ExpireDate
+                </th>
+                <th>
+                    Made In
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Type
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.MedicineId
+                    </td>
+                    <td>
+                        @item.MedicineName
+                    </td>
+                    <td width="40%">
+                        @item.MedicineDescription
+                    </td>
+                    <td>
+                        @item.Amount
+                    </td>
+                    <td>
+                        @item.MedicineMass
+                    </td>
+                    <td>
+                        @item.ProductDate
+                    </td>
+                    <td>
+                        @item.ExpireDate
+                    </td>
+                    <td>
+                        @item.MadeIn
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        @item.Type
+                    </td>
+
+
+                    <td>
+                        <a href="/Medicine/Update/@item.MedicineId" class=" btn btn-outline-primary">Update</a>
+                    </td>
+                    <td>
+                        <a href="/Medicine/Details/@item.MedicineId" class=" btn btn-outline-primary">Details</a>
+                    </td>
+                    <td>
+                        <a href="/Medicine/Delete/@item.MedicineId" class=" btn btn-outline-primary">Details</a>
+                    </td>
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
